@@ -53,20 +53,24 @@ print(f3(8))     # Should print 9
 
 # YOUR CODE HERE
 def f4(**kwargs):
+    #kwargs turns key, values into an object, if not already
+    print('kwargs line 56',kwargs)
     for key, value in kwargs.items():
-        print("key:%s, value:%d" %(key, value))
-       # print("key: {}, value:{}".format(key, args[key]))
+       # print("key:%s, value:%d" %(key, value))
+        print("key: {}, value:{}".format(key, value))
+    return(kwargs)
 
 # Should print
 # key: a, value: 12
 # key: b, value: 30
-f4(a=12, b=30)
+newVar = f4(a=12, b=30)
+print('newVar line 67',newVar)
 
 # Should print
 # key: city, value: Berkeley
 # key: population, value: 121240
 # key: founded, value: "March 23, 1868"
-def f4(**kwargs):
+def f5(**kwargs):
     for key, value in kwargs.items():
         print("key:%s, value:%s" %(key, value))
 f4(city="Berkeley", population=121240, founded="March 23, 1868")
@@ -77,6 +81,8 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-def f4(**kwargs):
-   print()
-f4(d)
+# def f4(**kwargs):
+#    print()
+
+#run an object through the function
+f4(**d)

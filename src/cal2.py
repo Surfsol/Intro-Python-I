@@ -31,63 +31,10 @@ import sys
 import calendar
 from datetime import datetime
 
-#input in terminal `14_cal.py [month] [year]`
-
-#no input calendar will default to current date and time
-
-#first argument for month, and second for year, must be separated by comma
-monthYear = input('[month] [year]').split()
-
-today = datetime.now()
-
-if len(monthYear) == 0:
-  month =datetime.now().month
-else:
-  month = monthYear[0] 
-  
-if len(monthYear) > 1:
-  year = monthYear[1]
-else:
-  # year = today.strftime("%Y")
-   year = datetime.now().year
-
-print(month, year)
-print(type(month))
-#generate plain text calendar
-c = calendar.TextCalendar(calendar.SUNDAY)
-str= c.formatmonth(int(year), int(month))
-print(str)
-
-
-
-
-
-# month, year = input('[month] [year]').split(',')
-# print(month)
-# print(year)5
-today = datetime.today()
-print(type(today))
-#print(str(today[6:9]))
-
-#get year-month-time
-today = datetime.now()
-#turn datetime into a string and pull out year
-print(today.strftime("%Y"))
-
-#month, year = input().split(',')
-
-
-
-
-
-# theyear = 2020
-# themonth = 5
-# c = calendar.formatmonth(theyear, themonth, withyear=True)
-# print(c)
-# year = 2020
-# month = 4
-# day = 9
-# c = calendar.weekday(year, month, day)
-# print(c)
-
 user_input = sys.argv
+month = user_input[1]
+year = user_input[2] 
+print(month, year)
+
+year = datetime.now().year
+print(year)

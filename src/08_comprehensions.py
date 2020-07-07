@@ -36,7 +36,10 @@ print(y)
 
 x = input("Enter comma-separated numbers: ").split(',')
 
-# What do you need between the square brackets to make it work?
-y = [n for n in x if int(n)%2==0]
+even = [item for item in x ]
+print(even)
 
-print(y)
+# What do you need between the square brackets to make it work?
+# y = [n for n in x if int(n)%2==0]
+
+# print(y)

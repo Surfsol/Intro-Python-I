@@ -33,3 +33,42 @@ def inner():
 
 
 outer()
+
+
+#local, enclosing, global, built in
+
+#local
+x = 1
+y = 2
+
+def mmm(x):
+    y = 3
+    print(x, y)
+
+mmm(10)
+print(x, y)
+
+x = 100
+
+def my_outer(x):
+    y = 50
+
+    def inner():
+        print(x,y)
+    inner()
+
+my_outer(75)
+
+
+#last scope to be searched Builtin
+print(pow(2, 3))
+
+#see builtin variables
+
+#puts a variable in global scope
+def vus():
+    global x 
+    x = 100
+
+vus()
+print(x)

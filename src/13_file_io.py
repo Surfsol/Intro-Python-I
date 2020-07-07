@@ -9,6 +9,10 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # Print all the contents of the file, then close the file
 # Note: pay close attention to your current directory when trying to open "foo.txt"
 
+from os import listdir
+from os.path import isfile, join
+onlyfiles = [f for f in listdir(mypath) if isfile(join(mypath, f))]
+
 # YOUR CODE HERE
 #f = open('foo.txt', 'r')
 with open('foo.txt') as f:
@@ -26,4 +30,6 @@ print(file_open)
 f=open("bar.txt", "w+")
 
 for i in range(3):
-    f.write("This is line %d\r\n" % (i+1))
+    #f.write("This is line %d\r\n" % (i+1))
+    #f and {} goes together, f = .format
+    f.write(f"This is line {i+1}\r\n")
