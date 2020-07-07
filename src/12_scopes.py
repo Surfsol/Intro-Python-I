@@ -8,6 +8,9 @@ def change_x():
     x = 99
 
 change_x()
+x = 99
+
+   
 
 # This prints 12. What do we have to modify in change_x() to get it to print 99?
 print(x)
@@ -18,8 +21,8 @@ print(x)
 def outer():
     y = 120
 
-    def inner():
-        y = 999
+def inner():
+    y = 999
 
     inner()
 
@@ -30,3 +33,42 @@ def outer():
 
 
 outer()
+
+
+#local, enclosing, global, built in
+
+#local
+x = 1
+y = 2
+
+def mmm(x):
+    y = 3
+    print(x, y)
+
+mmm(10)
+print(x, y)
+
+x = 100
+
+def my_outer(x):
+    y = 50
+
+    def inner():
+        print(x,y)
+    inner()
+
+my_outer(75)
+
+
+#last scope to be searched Builtin
+print(pow(2, 3))
+
+#see builtin variables
+
+#puts a variable in global scope
+def vus():
+    global x 
+    x = 100
+
+vus()
+print(x)
